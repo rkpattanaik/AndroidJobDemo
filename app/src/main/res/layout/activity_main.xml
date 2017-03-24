@@ -6,18 +6,4 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context="com.rkpattanaik.androidjobdemo.MainActivity">
-
-    <Button
-        android:id="@+id/btnStartJob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start_job"/>
-
-    <Button
-        android:id="@+id/btnCancelJob"
-        android:layout_below="@id/btnStartJob"
-        android:layout_marginTop="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel_job"/>
 </RelativeLayout>
