@@ -7,7 +7,7 @@ import com.evernote.android.job.JobCreator;
  * @author Rajesh Pattanaik
  */
 
-public class DemoJobCreator implements JobCreator {
+class DemoJobCreator implements JobCreator {
 
     @Override
     public Job create(String tag) {
