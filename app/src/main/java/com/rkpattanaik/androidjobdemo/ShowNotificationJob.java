@@ -25,7 +25,8 @@ class ShowNotificationJob extends Job {
     @NonNull
     @Override
     protected Result onRunJob(Params params) {
-        PendingIntent pi = PendingIntent.getActivity(getContext(), 0, new Intent(getContext(), MainActivity.class), 0);
+        PendingIntent pi = PendingIntent.getActivity(getContext(), 0,
+                new Intent(getContext(), MainActivity.class), 0);
 
         Notification notification = new NotificationCompat.Builder(getContext())
                 .setContentTitle("Android Job Demo")
@@ -38,14 +39,15 @@ class ShowNotificationJob extends Job {
                 .setLocalOnly(true)
                 .build();
 
-        NotificationManagerCompat.from(getContext()).notify(new Random().nextInt(), notification);
+        NotificationManagerCompat.from(getContext())
+                .notify(new Random().nextInt(), notification);
 
         return Result.SUCCESS;
     }
 
     static void schedulePeriodic() {
         new JobRequest.Builder(ShowNotificationJob.TAG)
-                .setPeriodic(TimeUnit.MINUTES.toMillis(1), 30000)
+                .setPeriodic(TimeUnit.MINUTES.toMillis(15), TimeUnit.MINUTES.toMillis(5))
                 .setUpdateCurrent(true)
                 .setPersisted(true)
                 .build()
